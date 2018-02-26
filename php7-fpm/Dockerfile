@@ -38,3 +38,12 @@ RUN echo 'alias sf="php app/console"' >> ~/.bashrc
 RUN echo 'alias sf3="php bin/console"' >> ~/.bashrc
 
 WORKDIR /var/www/symfony
+
+RUN composer create-project symfony/website-skeleton .
+RUN composer require annotations
+RUN composer require --dev profiler
+RUN composer require twig
+RUN composer require orm
+RUN composer require form
+RUN composer require form validator
+RUN composer require maker-bundle
